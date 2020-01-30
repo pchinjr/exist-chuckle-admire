@@ -101,6 +101,8 @@ const randoLove = randoWord(synLove)
 // }
 
 exports.handler = async function http (req) {
+
+  console.log(`lambda executed with ${req}`)
   return {
     headers: {
       'content-type': 'application/json; charset=utf8',
