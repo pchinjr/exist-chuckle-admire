@@ -1,11 +1,17 @@
+# Warning! Do Not Edit
+# --------------------
+# This is a generated file and will be overwritten
+
 @app
-init
+start-ncs
+
+@static
 
 @http
 get /
 
-@aws
-# profile default
-# region us-west-1
-# bucket your-private-deploy-bucket
-  
+@tables
+data
+  scopeID *String
+  dataID **String
+  ttl TTL
