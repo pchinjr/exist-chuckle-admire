@@ -93,9 +93,21 @@ const randoLive = randoWord(synLive)
 const randoLaugh = randoWord(synLaugh)
 const randoLove = randoWord(synLove)
 
+// exports.handler = async function http (req) {
+//   return {
+//     headers: {'content-type': 'text/html; charset=utf8'},
+//     body: `${randoLive}, ${randoLaugh}, ${randoLove}`
+//   }
+// }
+
 exports.handler = async function http (req) {
   return {
-    headers: {'content-type': 'text/html; charset=utf8'},
-    body: `${randoLive}, ${randoLaugh}, ${randoLove}`
+    headers: {
+      'content-type': 'application/json; charset=utf8',
+      'cache-control': 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0'
+    },
+    body: {
+      message: `${randoLive}, ${randoLaugh}, ${randoLove}`
+    }
   }
 }
